@@ -3,17 +3,16 @@
 Clone the repository:
 
 ```
-git clone https://github.com/marktext/marktext.git
+git clone https://github.com/calcitem/markdartix.git
 ```
 
 ### Prerequisites
 
-Before you can get started developing, you need set up your build environment:
+Before you can get started developing, you need to set up your build environment:
 
-- Node.js `>=v16` but `<v17` and yarn
-- Python `>=v3.6` for node-gyp
-- C++ compiler and development tools
-- Build is supported on Linux, macOS and Windows
+- Flutter SDK
+- Dart SDK
+- Android Studio or another suitable IDE for Flutter development
 
 **Additional development dependencies on Linux:**
 
@@ -28,30 +27,20 @@ On Red Hat-based Linux: `sudo dnf install libX11-devel libxkbfile-devel libsecre
 
 **Additional development dependencies on Windows:**
 
-- Windows 10 SDK (only needed before Windows 10)
-- Visual Studio 2019 (preferred)
+- Windows 11 SDK (only needed before Windows 11)
+- Visual Studio 2022 (preferred)
 
 ### Let's build
 
-1. Go to `marktext` folder
-2. Install dependencies: `yarn install` or `yarn install --frozen-lockfile`
-3. Build MarkText binaries and packages: `yarn run build`
-4. MarkText binary is located under `build` folder
+1. Go to the `markdartix` folder
+2. Run `flutter pub get` to fetch dependencies
+3. Run `flutter build` to build the MarkDartix binaries for your OS
+4. MarkDartix binary is located under the `build` folder
 
 Copy the build app to applications folder, or if on Windows run the executable installer.
 
-### Important scripts
+### Run
 
 ```
-$ yarn run <script> # or npm run <script>
+$ flutter run
 ```
-
-| Script          | Description                                      |
-| --------------- | ------------------------------------------------ |
-| `build`         | Build MarkText binaries and packages for your OS |
-| `build:bin`     | Build MarkText binary for your OS                |
-| `dev`           | Build and run MarkText in developer mode         |
-| `lint`          | Lint code style                                  |
-| `test` / `unit` | Run unit tests                                   |
-
-For more scripts please see `package.json`.

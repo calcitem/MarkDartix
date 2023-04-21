@@ -1,11 +1,11 @@
 ## Compare with `marked.js`
 
 Marked.js failed examples count: 38
-MarkText failed examples count: 0
+MarkDartix failed examples count: 0
 
 **Example23**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -26,7 +26,7 @@ marked.js html
 
 **Example24**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -49,7 +49,7 @@ marked.js html
 
 **Example28**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -80,7 +80,7 @@ marked.js html
 
 **Example32**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -99,7 +99,7 @@ marked.js html
 
 **Example33**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -120,7 +120,7 @@ marked.js html
 
 **Example34**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -143,7 +143,7 @@ marked.js html
 
 **Example81**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -169,7 +169,7 @@ baz</em>
 
 **Example82**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -193,7 +193,7 @@ baz</em><br>====</p>
 
 **Example95**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -219,7 +219,7 @@ Bar</p>
 
 **Example195**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -248,7 +248,7 @@ marked.js html
 
 **Example200**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -269,7 +269,7 @@ marked.js html
 
 **Example202**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -290,7 +290,7 @@ marked.js html
 
 **Example236**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -322,7 +322,7 @@ bar
 
 **Example237**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -355,7 +355,7 @@ marked.js html
 
 **Example496**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -374,7 +374,7 @@ marked.js html
 
 **Example502**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -393,7 +393,7 @@ marked.js html
 
 **Example506**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -412,7 +412,7 @@ marked.js html
 
 **Example511**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -431,7 +431,7 @@ marked.js html
 
 **Example517**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -450,7 +450,7 @@ marked.js html
 
 **Example518**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -469,7 +469,7 @@ marked.js html
 
 **Example519**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -488,7 +488,7 @@ marked.js html
 
 **Example523**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -507,7 +507,7 @@ marked.js html
 
 **Example525**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -526,7 +526,7 @@ marked.js html
 
 **Example527**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -547,7 +547,7 @@ marked.js html
 
 **Example531**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -568,7 +568,7 @@ marked.js html
 
 **Example532**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -589,7 +589,7 @@ marked.js html
 
 **Example535**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -610,7 +610,7 @@ marked.js html
 
 **Example537**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -631,7 +631,7 @@ marked.js html
 
 **Example539**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -652,7 +652,7 @@ marked.js html
 
 **Example572**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -673,7 +673,7 @@ marked.js html
 
 **Example573**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -692,7 +692,7 @@ marked.js html
 
 **Example574**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -711,7 +711,7 @@ marked.js html
 
 **Example575**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -732,7 +732,7 @@ marked.js html
 
 **Example576**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -753,7 +753,7 @@ marked.js html
 
 **Example584**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -774,7 +774,7 @@ marked.js html
 
 **Example588**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -795,7 +795,7 @@ marked.js html
 
 **Example625**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content
@@ -814,7 +814,7 @@ marked.js html
 
 **Example626**
 
-MarkText success and marked.js fail
+MarkDartix success and marked.js fail
 
 ```markdown
 Markdown content

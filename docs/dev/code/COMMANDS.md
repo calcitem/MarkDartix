@@ -17,7 +17,7 @@ A command can execute a procedure and is shown in the command palette or can be 
 
 **Dynamic command:**
 
-You can use either a class or object at runtime to register a command via the bus event `CMD::register-command`. A simple class example can be found below or a more complex [here](https://github.com/marktext/marktext/blob/develop/src/renderer/commands/quickOpen.js).
+You can use either a class or object at runtime to register a command via the bus event `CMD::register-command`. A simple class example can be found below or a more complex [here](https://github.com/calcitem/markdartix/blob/develop/src/renderer/commands/quickOpen.js).
 
 ```js
 export class ExampleCommand {

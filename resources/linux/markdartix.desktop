@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=MarkDartix
+Comment=Next generation markdown editor
+Exec=markdartix %F
+Terminal=false
+Type=Application
+Icon=markdartix
+Categories=Office;TextEditor;Utility;
+MimeType=text/markdown;
+Keywords=markdartix;
+StartupWMClass=markdartix
+Actions=NewWindow;
+
+[Desktop Action NewWindow]
+Name=New Window
+Exec=markdartix --new-window %F
+Icon=markdartix

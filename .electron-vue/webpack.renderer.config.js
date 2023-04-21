@@ -13,7 +13,7 @@ const postcssPresetEnv = require('postcss-preset-env')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const ESLintPlugin = require('eslint-webpack-plugin')
 
-const { getRendererEnvironmentDefinitions } = require('./marktextEnvironment')
+const { getRendererEnvironmentDefinitions } = require('./markdartixEnvironment')
 const { dependencies } = require('../package.json')
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -235,14 +235,14 @@ if (!isProduction) {
 }
 
 if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test' &&
-  !process.env.MARKTEXT_DEV_HIDE_BROWSER_ANALYZER) {
+  !process.env.MARKDARTIX_DEV_HIDE_BROWSER_ANALYZER) {
   rendererConfig.plugins.push(
     new BundleAnalyzerPlugin()
   )
 }
 
 // Fix debugger breakpoints
-if (!isProduction && process.env.MARKTEXT_BUILD_VSCODE_DEBUG) {
+if (!isProduction && process.env.MARKDARTIX_BUILD_VSCODE_DEBUG) {
   rendererConfig.devtool = 'inline-source-map'
 }
 

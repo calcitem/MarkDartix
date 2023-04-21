@@ -1,6 +1,6 @@
 # Internal Documentation
 
-WIP documentation of MarkText internals.
+WIP documentation of MarkDartix internals.
 
 - [Block addition properties and its value](BLOCK_ADDITION_PROPERTY.md)
 - [Commands](COMMANDS.md)

@@ -1,4 +1,4 @@
-import { extractWord } from '../../../src/muya/lib/marktext/spellchecker.js'
+import { extractWord } from '../../../src/muya/lib/markdartix/spellchecker.js'
 
 const basicCheck = 'Lorem ipsum dolor'
 const basicText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pharetra turpis in ante viverra, sit amet euismod tortor rutrum. Sed eu libero velit. Aliquam erat volutpat. Sed ullamcorper ultricies auctor. Vestibulum vitae odio eleifend, finibus justo a, vestibulum orci.'

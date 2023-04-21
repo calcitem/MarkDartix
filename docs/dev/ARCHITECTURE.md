@@ -3,31 +3,38 @@
 ## Overview
 
 - `.`: Configuration files
-- `package.json`: Project settings
+
+- `pubspec.yaml`: Project settings
+
 - `build/`: Contains generated binaries
+
 - `dist/`: Build files for deployment
+
 - `docs/`: Documentation and assets
-- `resources/`: Application assets using at build time
-- `node_modules/`: Dependencies
-- `src`: MarkText source code
-  - `common/`: Common source files that only require Node.js APIs. Code from this folder can be used in all other folders except `muya`.
-  - `main/`: Main process source files that require Electron main-process APIs. `main` files can use `common` source code.
-  - `muya/`: MarkTexts backend that only allow pure JavaScript, BOM and DOM APIs. Don't use Electron or Node.js APIs!
-  - `renderer`: Frontend that require Electron renderer-process APIs and may use `common` or `muya` source code.
-- `static/`: Application assets (images, themes, etc)
+
+- `resources/`: Application assets used at build time
+
+- `lib`: MarkDartix source code
+  - `common/`: Common source files that only require Dart APIs. Code from this folder can be used in all other folders.
+  - `main/`: Main process source files that require Flutter main-process APIs. `main` files can use `common` source code.
+  - `muya/`: MarkDartix's backend that only allows pure Dart, BOM and DOM APIs. Don't use Flutter or other platform-specific APIs!
+  - `renderer`: Frontend that requires Flutter renderer-process APIs and may use `common` or `muya` source code.
+  
+- `assets/`: Application assets (images, themes, etc)
+
 - `test/`: Contains (unit) tests
 
-## Introduction to MarkText
+## Introduction to MarkDartix
 
-MarkText is a realtime preview (WYSIWYG) editor for markdown with various markdown extensions and our philosophy is to keep things clean, simple and minimal. The application is build with HTML, JS and CSS on top of Electron. Currently we're using a few native node libraries and our UI is build with Vue/Vuex. MarkText can be split in three parts: the core called Muya, the main- and renderer process.
+MarkDartix is a realtime preview (WYSIWYG) editor for markdown with various markdown extensions, and our philosophy is to keep things clean, simple, and minimal. The application is built with Dart and Flutter. Currently, we're using a few platform-specific libraries, and our UI is built with Flutter. MarkDartix can be split into three parts: the core called Muya, the main process, and the renderer process.
 
-Muya provides realtime preview and markdown editing via multiple modules based on a block structure. You can imagine it as the editor backend with modules for markdown parsing, data store as block structure, markdown document transformations according CommonMark and GitHub Flavored Markdown specification with some extra specifications, event listeners and an exporter to generate standalone HTML and markdown files but also to generate the WYSIWYG editor. Muya is single threaded as well as MarkText but use asynchronous functions to boost performance.
+Muya provides realtime preview and markdown editing via multiple modules based on a block structure. You can imagine it as the editor backend with modules for markdown parsing, data store as block structure, markdown document transformations according to CommonMark and GitHub Flavored Markdown specification with some extra specifications, event listeners, and an exporter to generate standalone HTML and markdown files but also to generate the WYSIWYG editor. Muya is single-threaded as well as MarkDartix but uses asynchronous functions to boost performance.
 
-> NOTE: MarkText's source-code editor is provided by CodeMirror and not well optimized nor feature rich. It's not part of Muya and an editor (renderer process) feature that load the markdown text from Muya (export), operate on it and re-import the text into Muya when switching to preview mode.
+> NOTE: MarkDartix's source-code editor is provided by a Dart-based code editor and is not well optimized nor feature-rich. It's not part of Muya and is an editor (renderer process) feature that loads the markdown text from Muya (export), operates on it, and re-imports the text into Muya when switching to preview mode.
 
-> NOTE: Muya requires a core refactoring to provide better modularization, APIs and plugins. Furthermore, the data structure need improvements for better performance and stability.
+> NOTE: Muya requires a core refactoring to provide better modularization, APIs, and plugins. Furthermore, the data structure needs improvements for better performance and stability.
 
-The editor represents the view and is split into two parts. The first is the main process that have full access to Electron and all OS features. It's mainly used for IO, user interaction with native dialogs and controlls the editor windows. The main process should not (be long) blocked by synchronous operations. The renderer process is the real editor and also a host for Muya. It's responsible for all graphical elements (`src/renderer/components`), data (`src/renderer/store`) and data synchronization. A renderer process is spawned for each window, operates on its own and is controlled by the main process. It contains two text editors: the realtime preview editor provided by Muya and the source-code one by CodeMirror with special features such as tabs, sidebar and editing features.
+The editor represents the view and is split into two parts. The first is the main process that has full access to Flutter and all OS features. It's mainly used for IO, user interaction with native dialogs, and controls the editor windows. The main process should not (be long) blocked by synchronous operations. The renderer process is the real editor and also a host for Muya. It's responsible for all graphical elements (`lib/renderer/components`), data (`lib/renderer/store`), and data synchronization. A renderer process is spawned for each window, operates on its own, and is controlled by the main process. It contains two text editors: the realtime preview editor provided by Muya and the source-code one by a Dart-based code editor with special features such as tabs, sidebar, and editing features.
 
 ### Application entry points
 
@@ -44,7 +51,7 @@ TBD
 - How Muya work internal
 - Data structure
 
-### Main- and renderer process communication
+### Main and renderer process communication
 
 Main- and renderer process communicate asynchronously via [inter-process communication (IPC)](code/IPC.md) and it's mainly used for IO and user interaction with native dialogs.
 
@@ -54,18 +61,18 @@ TBD
 
 ### Examples
 
-#### Opening a markdown document and render it
+#### Opening a markdown document and rendering it
 
-`MarkdownDocument` is a document that represents a markdown file on disk or an untitled document. To get a markdown document you can use the `loadMarkdownFile` function that asynchronously returns a `RawMarkdownDocument` (= `MarkdownDocument` with some additional information) in the main process.
+`MarkdownDocument` is a document that represents a markdown file on disk or an untitled document. To get a markdown document, you can use the `loadMarkdownFile` function that asynchronously returns a `RawMarkdownDocument` (= `MarkdownDocument` with some additional information) in the main process.
 
 **Overall steps to open a file:**
 
-1. Click `File -> Open File` and a file dialog is shown that emit `app-open-file-by-id` with the editor window id to open the file in and resolved absolute file path.
-2. The application (`App` instance) tries to find the specified editor and call `openTab` on the editor window. A new editor window is created if no editor window exists.
-3. The editor window tries to load the markdown file via `loadMarkdownFile` and send the result via the `mt::open-new-tab` event to the renderer process.
-  - Each opened file is also added to the filesystem watcher and the full path is saved to track opened file in the current editor window.
-4. The event is triggered in `src/renderer/store/editor.js` (renderer process), does some checks and create a new document state that represent a markdown document and tab state.
-5. The new created tab is either opened and the `file-changed` event is emitted or just added to the tab state.
-6. Both Muya and the source-code editor listen on this event and change the markdown document accordingly.
+1. Click `File -> Open File`, and a file dialog is shown that emits `app-open-file-by-id` with the editor window id to open the file in and the resolved absolute file path.
+2. The application (`App` instance) tries to find the specified editor and calls `openTab` on the editor window. A new editor window is created if no editor window exists.
+3. The editor window tries to load the markdown file via `loadMarkdownFile` and sends the result via the `mt::open-new-tab` event to the renderer process.
+  - Each opened file is also added to the filesystem watcher, and the full path is saved to track the opened file in the current editor window.
+4. The event is triggered in `lib/renderer/store/editor.dart` (renderer process), does some checks, and creates a new document state that represents a markdown document and tab state.
+5. The newly created tab is either opened, and the `file-changed` event is emitted or just added to the tab state.
+6. Both Muya and the source-code editor listen to this event and change the markdown document accordingly.
 
-> NOTE: We currently have no high level APIs to make changes to the document text or lines automatically. All modifications need user interaction!
+> NOTE: We currently have no high-level APIs to make changes to the document text or lines automatically. All modifications require user interaction!

@@ -22,8 +22,8 @@ jobs:
 
     env:
       DISPLAY: ":99.0"
-      # MARKTEXT_IS_STABLE: 1
-      MARKTEXT_EXIT_ON_ERROR: 1
+      # MARKDARTIX_IS_STABLE: 1
+      MARKDARTIX_EXIT_ON_ERROR: 1
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
@@ -89,8 +89,8 @@ jobs:
     timeout-minutes: 45
 
     env:
-      # MARKTEXT_IS_STABLE: 1
-      MARKTEXT_EXIT_ON_ERROR: 1
+      # MARKDARTIX_IS_STABLE: 1
+      MARKDARTIX_EXIT_ON_ERROR: 1
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:

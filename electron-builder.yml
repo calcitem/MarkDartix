@@ -1,5 +1,5 @@
-productName: "MarkText"
-appId: "com.github.marktext.marktext"
+productName: "MarkDartix"
+appId: "com.github.markdartix.markdartix"
 
 asar: true
 asarUnpack:
@@ -65,7 +65,7 @@ fileAssociations:
   role: "Editor"
   icon: "../resources/icons/md.icns"
 mac:
-  artifactName: "marktext-${arch}-mac.${ext}"
+  artifactName: "markdartix-${arch}-mac.${ext}"
   icon: "resources/icons/icon.icns"
   darkModeSupport: true
   target:
@@ -74,7 +74,7 @@ mac:
     - target: zip
       arch: [x64, arm64]
 dmg:
-  artifactName: "marktext-${arch}.${ext}"
+  artifactName: "markdartix-${arch}.${ext}"
   contents:
   - x: 410
     y: 240
@@ -84,7 +84,7 @@ dmg:
     y: 240
     type: "file"
 win:
-  artifactName: "marktext-${arch}-win.${ext}"
+  artifactName: "markdartix-${arch}-win.${ext}"
   icon: "resources/icons/icon.ico"
   target:
   - target: "nsis"
@@ -93,23 +93,23 @@ win:
     arch: [ia32, x64]
   requestedExecutionLevel: "asInvoker"
 nsis:
-  artifactName: "marktext-setup.${ext}"
+  artifactName: "markdartix-setup.${ext}"
   perMachine: false
   oneClick: false
   allowToChangeInstallationDirectory: true
   include: "resources/windows/installer.nsh"
 linux:
-  artifactName: "marktext-${arch}.${ext}"
-  executableName: "marktext"
+  artifactName: "markdartix-${arch}.${ext}"
+  executableName: "markdartix"
   description: "A simple and elegant open-source markdown editor that focused on speed and usability."
-  maintainer: "MarkText Contributors"
+  maintainer: "MarkDartix Contributors"
   category: "Office;TextEditor;Utility"
   mimeTypes:
   - "text/markdown"
   icon: "resources/icons"
   desktop:
-    StartupWMClass: "marktext"
-    Keywords: "marktext;"
+    StartupWMClass: "markdartix"
+    Keywords: "markdartix;"
   target:
   - target: "AppImage"
   - target: "deb"

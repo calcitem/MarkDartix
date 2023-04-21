@@ -17,8 +17,8 @@ jobs:
 
     env:
       DISPLAY: ":99.0"
-      MARKTEXT_IS_STABLE: 1
-      MARKTEXT_EXIT_ON_ERROR: 1
+      MARKDARTIX_IS_STABLE: 1
+      MARKDARTIX_EXIT_ON_ERROR: 1
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
@@ -91,19 +91,19 @@ jobs:
       - name: Calculate checksums
         if: runner.os == 'Linux'
         run: |
-          sha256sum build/marktext-x64.tar.gz
-          sha256sum build/marktext-x86_64.AppImage
-          sha256sum build/marktext-*.deb
-          sha256sum build/marktext-*.rpm
+          sha256sum build/markdartix-x64.tar.gz
+          sha256sum build/markdartix-x86_64.AppImage
+          sha256sum build/markdartix-*.deb
+          sha256sum build/markdartix-*.rpm
         shell: bash
 
       - name: Calculate checksums
         if: runner.os == 'macOS'
         run: |
-          shasum -a 256 build/marktext-arm64-mac.zip
-          shasum -a 256 build/marktext-x64-mac.zip
-          shasum -a 256 build/marktext-arm64.dmg
-          shasum -a 256 build/marktext-x64.dmg
+          shasum -a 256 build/markdartix-arm64-mac.zip
+          shasum -a 256 build/markdartix-x64-mac.zip
+          shasum -a 256 build/markdartix-arm64.dmg
+          shasum -a 256 build/markdartix-x64.dmg
         shell: bash
 
   windows:
@@ -112,8 +112,8 @@ jobs:
     timeout-minutes: 45
 
     env:
-      MARKTEXT_IS_STABLE: 1
-      MARKTEXT_EXIT_ON_ERROR: 1
+      MARKDARTIX_IS_STABLE: 1
+      MARKDARTIX_EXIT_ON_ERROR: 1
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
@@ -172,6 +172,6 @@ jobs:
 
       - name: Calculate checksums
         run: |
-          get-filehash -Algorithm SHA256 "build\marktext-setup.exe"
-          get-filehash -Algorithm SHA256 "build\marktext-*-win.zip"
+          get-filehash -Algorithm SHA256 "build\markdartix-setup.exe"
+          get-filehash -Algorithm SHA256 "build\markdartix-*-win.zip"
         shell: pwsh

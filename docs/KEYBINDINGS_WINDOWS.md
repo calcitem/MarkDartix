@@ -1,6 +1,6 @@
 ew.source-code-m# Key Bindings for Windows
 
-MarkText key bindings for Windows. Please see [general key bindings](KEYBINDINGS.md) for information how to use custom key bindings.
+MarkDartix key bindings for Windows. Please see [general key bindings](KEYBINDINGS.md) for information how to use custom key bindings.
 
 ## Available menu key bindings
 
@@ -20,7 +20,7 @@ MarkText key bindings for Windows. Please see [general key bindings](KEYBINDINGS
 | `file.preferences`  | <kbd>Ctrl</kbd>+<kbd>,</kbd>                  | Open settings window                  |
 | `file.close-tab`    | <kbd>Ctrl</kbd>+<kbd>W</kbd>                  | Close tab                             |
 | `file.close-window` | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>W</kbd> | Close window                          |
-| `file.quit`         | <kbd>Ctrl</kbd>+<kbd>Q</kbd>                  | Quit MarkText                         |
+| `file.quit`         | <kbd>Ctrl</kbd>+<kbd>Q</kbd>                  | Quit MarkDartix                         |
 
 #### Edit menu
 

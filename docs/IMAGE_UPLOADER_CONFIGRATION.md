@@ -16,10 +16,10 @@ PicGo is a CLI tool to upload images to various cloud providers. Please see [her
 
 ![5ce17bd849d5589341](https://i.loli.net/2019/05/19/5ce17bd849d5589341.png)
 
-3. Config in MarkText Preferences window. click `CmdOrCtrl + ,` to open MarkText Preferences window.
+3. Config in MarkDartix Preferences window. click `CmdOrCtrl + ,` to open MarkDartix Preferences window.
 
 ![5ce17cb97b0f111638](https://i.loli.net/2019/05/19/5ce17cb97b0f111638.png)
 
 4. Input you `token`, `owner name` and `repo name` whick you just created. Click `Save` and `Set As default Uploader`.
 
-5. Paste an image into MarkText and open you created repo to see the uploaded image.
+5. Paste an image into MarkDartix and open you created repo to see the uploaded image.

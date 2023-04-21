@@ -1,7 +1,7 @@
 {
-  "name": "marktext",
+  "name": "markdartix",
   "version": "0.17.1",
-  "homepage": "https://github.com/marktext/marktext/",
+  "homepage": "https://github.com/calcitem/markdartix/",
   "description": "Next generation markdown editor",
   "license": "MIT",
   "main": "./dist/electron/main.js",
@@ -15,7 +15,7 @@
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
     "build:dev": "node .electron-vue/build.js",
     "dev": "cross-env node .electron-vue/dev-runner.js",
-    "e2e": "yarn run pack && cross-env MARKTEXT_EXIT_ON_ERROR=1 playwright test -c test/e2e/playwright.config.js test/e2e",
+    "e2e": "yarn run pack && cross-env MARKDARTIX_EXIT_ON_ERROR=1 playwright test -c test/e2e/playwright.config.js test/e2e",
     "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src test",
     "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix src test",
     "pack": "yarn run pack:main && yarn run pack:renderer",
@@ -36,7 +36,7 @@
   "dependencies": {
     "@electron/remote": "^2.0.8",
     "@hfelix/electron-localshortcut": "^4.0.1",
-    "@marktext/file-icons": "^1.0.6",
+    "@markdartix/file-icons": "^1.0.6",
     "@octokit/rest": "^18.12.0",
     "arg": "^5.0.1",
     "axios": "^0.26.1",
@@ -181,10 +181,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:marktext/marktext.git"
+    "url": "git@github.com:markdartix/markdartix.git"
   },
   "bugs": {
-    "url": "https://github.com/marktext/marktext/issues"
+    "url": "https://github.com/calcitem/markdartix/issues"
   },
   "author": {
     "name": "Jocs",

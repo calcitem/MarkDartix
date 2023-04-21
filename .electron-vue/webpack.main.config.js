@@ -6,7 +6,7 @@ const path = require('path')
 const webpack = require('webpack')
 const ESLintPlugin = require('eslint-webpack-plugin')
 
-const { getEnvironmentDefinitions } = require('./marktextEnvironment')
+const { getEnvironmentDefinitions } = require('./markdartixEnvironment')
 const { dependencies } = require('../package.json')
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -81,7 +81,7 @@ const mainConfig = {
 }
 
 // Fix debugger breakpoints
-if (!isProduction && process.env.MARKTEXT_BUILD_VSCODE_DEBUG) {
+if (!isProduction && process.env.MARKDARTIX_BUILD_VSCODE_DEBUG) {
   mainConfig.devtool = 'inline-source-map'
 }
 

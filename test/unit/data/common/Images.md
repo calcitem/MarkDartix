@@ -1,3 +1,3 @@
 # Images
 
-![alternate text](https://raw.githubusercontent.com/marktext/marktext/master/resources/icons/128x128/marktext.png)
+![alternate text](https://raw.githubusercontent.com/calcitem/markdartix/master/resources/icons/128x128/markdartix.png)
